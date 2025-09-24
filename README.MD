@@ -2,7 +2,7 @@
 
 An interactive educational platform for learning AI security vulnerabilities and defenses through hands-on practice with a simulated banking system.
 
-## ⚠️ IMPORTANT SECURITY NOTICE
+## IMPORTANT SECURITY NOTICE
 
 **This is an intentionally vulnerable application designed for educational purposes only.**
 
@@ -159,8 +159,8 @@ Students will learn to:
 ## File Structure
 
 ```
-├── fastapi_banking_system.py    # Vulnerable backend API
-├── streamlit_frontend.py        # Interactive frontend
+├── backend.py                  # Vulnerable backend API
+├── app.py                      # Interactive frontend
 ├── secure_bank.db              # SQLite database (auto-generated)
 ├── security_audit.log          # Security event logs
 └── README.md                   # This file
