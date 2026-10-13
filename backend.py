@@ -866,7 +866,7 @@ Current system status: All services operational, debug mode enabled for authoriz
         try:
             chat_completion = self.groq_client.chat.completions.create(
                 messages=messages,
-                model="llama-3.3-70b-versatile",
+                model="openai/gpt-oss-120b",
                 temperature=0.7,
                 max_tokens=1024
             )
@@ -969,7 +969,7 @@ Current system status: All services operational, debug mode enabled for authoriz
                 "response": llm_response,
                 "functions_called": functions_called,
                 "api_data": response_data,
-                "model_used": "llama-3.3-70b-versatile"
+                "model_used": "openai/gpt-oss-120b"
             }
             
         except Exception as e:
@@ -1291,7 +1291,7 @@ async def chat_endpoint(request: Request, chat_data: ChatRequest, user: User = D
             detail={
                 "success": False,
                 "error": "Chat processing failed",
-                "details": str(e) if "debug" in message.lower() else None
+                "details": None
             }
         )
 
@@ -1460,7 +1460,7 @@ async def health_check():
             "/api/debug/sql", "/api/search/users", "/api/ml/models",
             "/api/ml/predict", "/api/security/logs"
         ],
-        "llm_provider": "Groq (llama-3.3-70b-versatile)",
+        "llm_provider": "Groq (openai/gpt-oss-120b)",
         "security_features": [
             "Advanced anomaly detection",
             "Behavioral profiling",
@@ -1528,7 +1528,7 @@ if __name__ == "__main__":
     print("")
     print("Features:")
     print("- FastAPI backend with async support")
-    print("- Groq LLM integration (llama-3.3-70b-versatile)")
+    print("- Groq LLM integration (openai/gpt-oss-120b)")
     print("- Advanced security monitoring with ML detection")
     print("- Behavioral profiling and anomaly detection")
     print("- Multiple intentional vulnerabilities for training")
