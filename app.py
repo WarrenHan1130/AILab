@@ -1289,24 +1289,24 @@ def render_dashboard():
     
     st.subheader("Quick Actions")
     col1, col2, col3, col4 = st.columns(4)
-    
+
     with col1:
-        if st.button("🎯 Challenges", use_container_width=True):
+        if st.button("🎯 Challenges", key="quick_action_challenges", use_container_width=True):
             st.session_state.page = "challenges"
             st.rerun()
-    
+
     with col2:
-        if st.button("⚔️ Attack Lab", use_container_width=True):
+        if st.button("⚔️ Attack Lab", key="quick_action_attack_lab", use_container_width=True):
             st.session_state.page = "attack_lab"
             st.rerun()
-    
+
     with col3:
-        if st.button("🛡️ Defense Lab", use_container_width=True):
+        if st.button("🛡️ Defense Lab", key="quick_action_defense_lab", use_container_width=True):
             st.session_state.page = "defense_lab"
             st.rerun()
-    
+
     with col4:
-        if st.button("📚 Learn", use_container_width=True):
+        if st.button("📚 Learn", key="quick_action_learn", use_container_width=True):
             st.session_state.page = "learning"
             st.rerun()
 
